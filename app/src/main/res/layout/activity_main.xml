@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:id="@+id/drawer_main_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:visibility="gone"
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- debut Loading-->
+        <RelativeLayout
+            android:animateLayoutChanges="true"
+            android:id="@+id/rlLoading"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/Lv_Search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="200dp"
+                android:scaleType="fitCenter">
+
+                <ProgressBar
+                    android:visibility="gone"
+                    android:id="@+id/spin_kit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/white"
+                    android:tag="binding_5" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@id/text"
+                    style="@style/TextRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:text="Chargement ..."
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- fin Loading-->
+
+        <!-- debut no result found-->
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/no_result_found_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/Lv_Search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="150dp"
+                android:scaleType="fitCenter">
+
+                <ImageView
+                    android:id="@+id/no_result_found_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/data_not_found" />
+
+                <TextView
+                    android:textSize="18sp"
+                    android:justificationMode="inter_word"
+                    android:id="@+id/tv_no_result"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:text="Aucune une annonce publicitaire trouvée"
+                    android:layout_below="@+id/no_result_found_img"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/Text.Medium"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!-- fin no result found-->
+
+        <!-- debut connection failure-->
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/network_error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/Lv_Search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="180dp"
+                android:scaleType="fitCenter">
+
+                <ImageView
+                    android:id="@+id/network_error_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/confusing_error" />
+
+                <TextView
+                    android:id="@+id/text_load_fail_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_load_fail"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="50dp"
+                    android:text="@string/no_connection_found"
+                    android:textSize="14sp"
+                    android:justificationMode="inter_word"
+                    style="@style/TextRegular" />
+
+                <Button
+                    android:id="@+id/btn_try_again"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_load_fail_details"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Réessayez"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!-- fin connection failure-->
+
+
+        <RelativeLayout
+            android:id="@+id/overlaySection"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/rounded_top_overlay">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp">
+
+                <LinearLayout
+                    android:id="@+id/overlaySectiong"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/rounded_top_overlay"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/pngwing"
+                        android:contentDescription="png wing"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call Now"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/centurygothic_bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="For Assistance"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/centurygothic_bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="8dp"/>
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/pngwingu"
+                        android:contentDescription="png wingu"
+                        android:layout_marginBottom="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/half_circle_ring"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end|top"
+                    android:src="@drawable/green_ring"
+                    android:layout_marginTop="82dp"
+                    android:layout_marginEnd="-40dp"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:id="@+id/half_circle_ring_left"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start|bottom"
+                    android:src="@drawable/green_ring"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginStart="-70dp"
+                    android:adjustViewBounds="true"/>
+
+            </FrameLayout>
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/rightCornerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu"
+            android:layout_gravity="end|top"
+            android:layout_margin="16dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="60dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/additionalText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SOLVER"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/franklingothic_demi"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/additionalText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Call"
+                    android:textSize="20sp"
+                    android:textColor="#ffde21"
+                    android:fontFamily="@font/franklingothic_demi"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/additionalText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call Button"
+                android:fontFamily="@font/centurygothic_bold"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <include layout="@layout/layout_settings"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
+
+
+
+
+
+
+
+

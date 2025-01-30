@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "226396292272",
+    "project_id": "solver-call-system",
+    "storage_bucket": "solver-call-system.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226396292272:android:77f063511e8fe3c3006775",
+        "android_client_info": {
+          "package_name": "com.solver.callbutton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC24phVGc3QPZiOOiWuOsiLsH63LjY6HUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226396292272:android:630220b747f43b22006775",
+        "android_client_info": {
+          "package_name": "com.solver.solvercallsystemagent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC24phVGc3QPZiOOiWuOsiLsH63LjY6HUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

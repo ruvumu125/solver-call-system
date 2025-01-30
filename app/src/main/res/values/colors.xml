@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="blue_marine">#03224c</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#1c8adb</color>
+    <color name="colorPrimary">#1c8adb</color>
+    <color name="primary_variant">#ff8e8e</color>
+    <color name="secondary_variant">#fddce3</color>
+    <color name="blue_link">#195dd4</color>
+    <color name="grey">#d1d1d1</color>
+    <color name="greyDark">#616161</color>
+    <color name="greyLight">#f1f1f1</color>
+    <color name="success">#099e33</color>
+    <string name="choose_color">Choose Color</string>
+
+    <color name="color_variant1">#500e10</color>
+    <color name="color_variant2">#af494f</color>
+    <color name="color_variant3">#981d26</color>
+    <color name="color_variant4">#765c5e</color>
+    <color name="secondary">#eceded</color>
+    <color name="grey_e0e2">#e0e2e9</color>
+    <color name="color_divider">#dddfe4</color>
+    <color name="secondary_button_stroke_pressed">#66aaaaaa</color>
+    <color name="circle_progress_bar_progress_color">#689f38</color>
+    <color name="uiv3_get_it_txt_color">#8f8f8f</color>
+    <color name="primaryactionbuttoncolor">#e95f62</color>
+    <color name="notifyAnimationProgressStart">#00e95f62</color>
+    <color name="notifyAnimationProgressEnd">#e95f62</color>
+    <color name="notifyAnimationBackground">#19e95f62</color>
+    <color name="gray_e5">#e5e5e5</color>
+    <color name="danger">#c50b0b</color>
+    <color name="dangerous">#f44336</color>
+    <color name="noconnection">#7d879c</color>
+    <color name="transparent">#00000000</color>
+    <color name="thirtyPercentTransparent">#59ffffff</color>
+    <color name="lightBlack">#4c4c4c</color>
+    <color name="color_item_pressed">#15000000</color>
+    <color name="grey2">#bfbfbf</color>
+    <color name="color_gray_aaa">#aaa</color>
+    <color name="kili_btn_bg_normal">@color/primary</color>
+    <color name="color_font_title">#150000</color>
+</resources>
